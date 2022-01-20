@@ -1,9 +1,10 @@
+import 'dotenv/config'
 import express from 'express'
 import usersRouter from './routes/users.js'
 const app = express()
-const port = 3040
+const port = process.env.PORT
   
-
+ 
 
 app.set('view engine', 'ejs')
 
@@ -35,5 +36,5 @@ app.use(function (req, res, next) {
 
 
 app.listen(port, function () {
-    console.log(`${new Date()}listening in port ${port} - hi mom!!`)
+    console.log(`${new Date()}listening in port ${port}`)
 })
